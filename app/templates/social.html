@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}LingoSprint | Social{% endblock %}
+{% block page_id %}social{% endblock %}
+
+{% block content %}
+<section class="dashboard-shell">
+  <section class="panel">
+    <div class="panel-header">
+      <div>
+        <p class="eyebrow">Friends and rankings</p>
+        <h1>Compare streaks and grow your league.</h1>
+      </div>
+    </div>
+    <form id="friend-request-form" class="inline-form">
+      <input id="friend-username" placeholder="Add friend by username" required>
+      <button class="button-primary" type="submit">Send request</button>
+    </form>
+  </section>
+
+  <section class="dashboard-grid social-grid">
+    <div class="column-main">
+      <section id="social-friends" class="panel loading-panel">Loading friends...</section>
+      <section id="social-pending" class="panel loading-panel">Loading requests...</section>
+    </div>
+    <div class="column-side">
+      <section id="social-weekly" class="panel loading-panel">Loading leaderboard...</section>
+    </div>
+  </section>
+</section>
+{% endblock %}

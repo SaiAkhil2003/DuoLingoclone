@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}LingoSprint{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  </head>
+  <body data-page="{% block page_id %}base{% endblock %}" {% block body_attrs %}{% endblock %}>
+    <div class="shell">
+      <header class="topbar">
+        <a class="brand" href="{{ url_for('main.index') }}">
+          <span class="brand-mark">LS</span>
+          <span>LingoSprint</span>
+        </a>
+        <nav class="nav">
+          {% if current_user.is_authenticated %}
+            <a href="{{ url_for('main.dashboard') }}">Dashboard</a>
+            <a href="{{ url_for('main.social') }}">Social</a>
+            <form action="{{ url_for('auth.logout') }}" method="post">
+              <button class="ghost-button" type="submit">Logout</button>
+            </form>
+          {% else %}
+            <a href="{{ url_for('auth.login') }}">Login</a>
+            <a class="primary-link" href="{{ url_for('auth.signup') }}">Start Learning</a>
+          {% endif %}
+        </nav>
+      </header>
+
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <section class="flash-stack">
+            {% for category, message in messages %}
+              <div class="flash flash-{{ category }}">{{ message }}</div>
+            {% endfor %}
+          </section>
+        {% endif %}
+      {% endwith %}
+
+      <main>
+        {% block content %}{% endblock %}
+      </main>
+    </div>
+    <div id="toast-root" class="toast-root"></div>
+    <script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}LingoSprint | Dashboard{% endblock %}
+{% block page_id %}dashboard{% endblock %}
+
+{% block content %}
+<section class="dashboard-shell">
+  <section id="dashboard-hero" class="panel hero-panel loading-panel">Loading dashboard...</section>
+  <section class="dashboard-grid">
+    <div class="column-main">
+      <section id="dashboard-courses" class="panel loading-panel">Loading courses...</section>
+      <section id="dashboard-recommendations" class="panel loading-panel">Loading recommendations...</section>
+      <section id="dashboard-analytics" class="panel loading-panel">Loading analytics...</section>
+    </div>
+    <div class="column-side">
+      <section id="dashboard-leaderboards" class="panel loading-panel">Loading leaderboards...</section>
+      <section id="dashboard-social" class="panel loading-panel">Loading social snapshot...</section>
+      <section id="dashboard-notifications" class="panel loading-panel">Loading notifications...</section>
+      <section id="dashboard-achievements" class="panel loading-panel">Loading achievements...</section>
+    </div>
+  </section>
+</section>
+{% endblock %}

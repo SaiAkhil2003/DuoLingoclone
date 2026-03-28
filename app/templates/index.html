@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}LingoSprint | Learn Like a Game{% endblock %}
+{% block page_id %}landing{% endblock %}
+
+{% block content %}
+<section class="hero">
+  <div class="hero-copy">
+    <p class="eyebrow">Adaptive language training</p>
+    <h1>Learn daily with streaks, leagues, placement tests, and voice practice.</h1>
+    <p class="lede">LingoSprint is a full-stack Duolingo-style platform with lessons, analytics, social competition, achievements, reminders, adaptive reviews, and browser-powered speaking and listening exercises.</p>
+    <div class="hero-actions">
+      <a class="button-primary" href="{{ url_for('auth.signup') }}">Create account</a>
+      <a class="button-secondary" href="{{ url_for('auth.login') }}">Use demo login</a>
+    </div>
+  </div>
+  <div class="hero-card">
+    <div class="hero-stat-grid">
+      <article>
+        <span>Placement</span>
+        <strong>Adaptive entry test</strong>
+      </article>
+      <article>
+        <span>Progress</span>
+        <strong>Spaced repetition</strong>
+      </article>
+      <article>
+        <span>Social</span>
+        <strong>Weekly leagues</strong>
+      </article>
+      <article>
+        <span>Voice</span>
+        <strong>Speech recognition</strong>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="feature-grid">
+  <article class="feature-card">
+    <h2>Learning system</h2>
+    <p>Structured courses, units, lessons, mixed question types, and dynamic difficulty based on your accuracy and review history.</p>
+  </article>
+  <article class="feature-card">
+    <h2>Gamification</h2>
+    <p>XP, levels, streaks, streak freezes, boosts, coins, badges, global leaderboards, and Duolingo-style leagues.</p>
+  </article>
+  <article class="feature-card">
+    <h2>Social competition</h2>
+    <p>Add friends, compare streaks, view weekly rankings, and climb the leaderboard together.</p>
+  </article>
+  <article class="feature-card">
+    <h2>Analytics</h2>
+    <p>Track weak topics, review queues, response time, completion activity, and personalized next-lesson recommendations.</p>
+  </article>
+</section>
+{% endblock %}

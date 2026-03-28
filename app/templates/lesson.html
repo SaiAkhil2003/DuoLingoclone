@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}LingoSprint | Lesson{% endblock %}
+{% block page_id %}lesson{% endblock %}
+{% block body_attrs %}data-lesson-id="{{ lesson_id }}"{% endblock %}
+
+{% block content %}
+<section class="lesson-shell">
+  <section id="lesson-header" class="panel loading-panel">Loading lesson...</section>
+  <section id="lesson-runner" class="panel loading-panel">Preparing questions...</section>
+</section>
+{% endblock %}
+
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/lesson.js') }}" defer></script>
+{% endblock %}
